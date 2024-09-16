@@ -83,42 +83,38 @@ To determine which model best suits the project, we’ll compare them using the 
 - Training Accuracy: 99% by epoch 20.
 - Test Accuracy: Peaks at 73.9% but declines to 70.4% by epoch 20.
 - Overfitting: This model suffers from significant overfitting, with training accuracy nearing 99% but test accuracy falling to 70.4%. The increasing test loss further indicates overfitting.
-* Strengths: Fine-tuning VGG-13 leads to very high training accuracy, which suggests that the model has the capacity to learn intricate patterns from the training data.
-
-* Weaknesses: The high gap between training and test accuracy signals that the model is overfitting to the training data. The generalization to unseen test data is poor, making it unreliable in real-world applications.
+- Strengths: Fine-tuning VGG-13 leads to very high training accuracy, which suggests that the model has the capacity to learn intricate patterns from the training data.
+- Weaknesses: The high gap between training and test accuracy signals that the model is overfitting to the training data. The generalization to unseen test data is poor, making it unreliable in real-world applications.
 
 2. VGG-13 Frozen
-Training Accuracy: 99% by epoch 20.
-Test Accuracy: Peaks at 74%, ending around 71.3%.
-Overfitting: While there is still overfitting, it is less severe than the fine-tuned version. Test accuracy remains relatively stable, but the increasing test loss signals some degree of overfitting.
-Strengths: VGG-13 Frozen performs slightly better than the fine-tuned version, with more stability in test accuracy and less pronounced overfitting. Freezing the pre-trained layers helps retain the learned general features.
-
-Weaknesses: Despite better performance, the model still suffers from overfitting. Freezing layers limits its adaptability to specific features of cassava diseases, which might be causing the lower test accuracy compared to other models.
+- Training Accuracy: 99% by epoch 20.
+- Test Accuracy: Peaks at 74%, ending around 71.3%.
+- Overfitting: While there is still overfitting, it is less severe than the fine-tuned version. Test accuracy remains relatively stable, but the increasing test loss signals some degree of overfitting.
+- Strengths: VGG-13 Frozen performs slightly better than the fine-tuned version, with more stability in test accuracy and less pronounced overfitting. Freezing the pre-trained layers helps retain the learned general features.
+- Weaknesses: Despite better performance, the model still suffers from overfitting. Freezing layers limits its adaptability to specific features of cassava diseases, which might be causing the lower test accuracy compared to other models.
 
 3. ResNet-18 Fine-Tuned
-Training Accuracy: 97.6% by epoch 20.
-Test Accuracy: Peaks at 78.1% (epoch 12) and drops to 74.4% by epoch 20.
-Overfitting: ResNet-18 Fine-Tuned achieves higher test accuracy than the VGG-13 models, with a smaller gap between training and test accuracy. While there is mild overfitting, it is more controlled.
-Strengths: Fine-tuning ResNet-18 provides the highest test accuracy (78.1%), outperforming both VGG models. The model's deeper architecture enables it to capture more complex features, which helps in better classification of cassava disease symptoms.
-
-Weaknesses: Although ResNet-18 Fine-Tuned shows less overfitting, there is still a noticeable gap between training and test performance, suggesting that some generalization issues remain.
+- Training Accuracy: 97.6% by epoch 20.
+- Test Accuracy: Peaks at 78.1% (epoch 12) and drops to 74.4% by epoch 20.
+- Overfitting: ResNet-18 Fine-Tuned achieves higher test accuracy than the VGG-13 models, with a smaller gap between training and test accuracy. While there is mild overfitting, it is more controlled.
+- Strengths: Fine-tuning ResNet-18 provides the highest test accuracy (78.1%), outperforming both VGG models. The model's deeper architecture enables it to capture more complex features, which helps in better classification of cassava disease symptoms.
+- Weaknesses: Although ResNet-18 Fine-Tuned shows less overfitting, there is still a noticeable gap between training and test performance, suggesting that some generalization issues remain.
 
 4. ResNet-18 Frozen
-Training Accuracy: Improves to 69.8% by epoch 3.
-Test Accuracy: Peaks at 72.2% and remains consistent without large fluctuations.
-Overfitting: ResNet-18 Frozen exhibits minimal overfitting, with consistent test accuracy throughout training. However, its overall accuracy is lower compared to the fine-tuned version.
-Strengths: ResNet-18 Frozen has stable performance, with no significant overfitting. This makes it a reliable option for tasks where stability is preferred over the highest possible accuracy.
+- Training Accuracy: Improves to 69.8% by epoch 3.
+- Test Accuracy: Peaks at 72.2% and remains consistent without large fluctuations.
+- Overfitting: ResNet-18 Frozen exhibits minimal overfitting, with consistent test accuracy throughout training. However, its overall accuracy is lower compared to the fine-tuned version.
+- Strengths: ResNet-18 Frozen has stable performance, with no significant overfitting. This makes it a reliable option for tasks where stability is preferred over the highest possible accuracy.
+- Weaknesses: The test accuracy (72.2%) is lower compared to the fine-tuned version. Freezing the model limits its ability to adapt to the specific nuances of the cassava disease dataset.
 
-Weaknesses: The test accuracy (72.2%) is lower compared to the fine-tuned version. Freezing the model limits its ability to adapt to the specific nuances of the cassava disease dataset.
-
-Comparison and Conclusion
+## Comparison and Conclusion
 Based on the comparison:
+- VGG-13 Fine-Tuned shows significant overfitting, with a large gap between training and test accuracy.
+- VGG-13 Frozen performs better, with more stable test accuracy, but still suffers from increasing test loss.
+- ResNet-18 Fine-Tuned achieves the best test accuracy (78.1%) and exhibits better control over overfitting.
+- ResNet-18 Frozen has minimal overfitting but lags behind in accuracy compared to the fine-tuned version.
 
-VGG-13 Fine-Tuned shows significant overfitting, with a large gap between training and test accuracy.
-VGG-13 Frozen performs better, with more stable test accuracy, but still suffers from increasing test loss.
-ResNet-18 Fine-Tuned achieves the best test accuracy (78.1%) and exhibits better control over overfitting.
-ResNet-18 Frozen has minimal overfitting but lags behind in accuracy compared to the fine-tuned version.
-Best Model: ResNet-18 Fine-Tuned
+## Best Model: ResNet-18 Fine-Tuned
 Among the four models, ResNet-18 Fine-Tuned stands out as the best fit for this project. It strikes the right balance between high test accuracy (78.1%) and manageable overfitting, making it the most effective model for detecting and classifying cassava disease symptoms.
 
 
