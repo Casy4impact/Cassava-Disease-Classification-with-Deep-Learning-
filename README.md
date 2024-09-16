@@ -1,6 +1,5 @@
 # Cassava-Disease-Classification-with-Deep-Learning-
-Computer Vision for Cassava Diseases Detection
-(Detect Cassava Diseases, Identify and Classify Disease Symptoms)
+Computer Vision for Cassava Diseases Detection, Identify and Classify Disease Symptoms
 
 Agricultural Capacity is one of the most important benchmarks for any thriving economy. As such, it is almost aways a high-investment activity. The investment made in agriculture acan be rendered void due to the acternal factors that may be beyond easy detection and control.
 
